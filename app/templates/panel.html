@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel - Minimarket Primavera</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f2f4f7; }
+    header { background: #2e7d32; color: #fff; padding: 12px 24px; display: flex;
+             justify-content: space-between; align-items: center; }
+    main { padding: 24px; }
+    button { padding: 8px 14px; border: 0; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Minimarket Primavera</strong>
+    <form method="post" action="{{ url_for('auth.logout') }}">
+      <button type="submit">Cerrar sesión</button>
+    </form>
+  </header>
+  <main>
+    <h2>Bienvenido, {{ g.usuario.nombre }}</h2>
+    <p>Rol: <strong>{{ g.usuario.rol }}</strong></p>
+    <p><a href="{{ url_for('auth.admin_prueba') }}">Probar zona de administrador</a></p>
+  </main>
+</body>
+</html>
